@@ -121,7 +121,7 @@ function App() {
                                                     <label htmlFor="instituicaoResponsavel">
                                                         <b>Instituição Responsável:</b>
                                                     </label>
-                                                    <p className="form-control-static instituicaoResponsavel">CENTRO UNIVERSITÁRIO FAVENI - UNIFAVENI...</p>
+                                                    <p className="form-control-static instituicaoResponsavel">CENTRO UNIVERSITÁRIO FAVENI - UNIFAVENI</p>
                                                 </div>
                                             </div>
 
