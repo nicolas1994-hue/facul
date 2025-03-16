@@ -21,7 +21,7 @@ function App() {
                                 <div className="panel-heading">
                                     <h3 className="panel-title text-center">
                                     <FaSearch />
-                                        Validação de Documento Digital
+                                        Validação de Documento Digital teste
                                     </h3>
                                 </div>
 
