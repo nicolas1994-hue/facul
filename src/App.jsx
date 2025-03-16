@@ -3,6 +3,7 @@ import './App.css'
 import './smartadmin-production.min.css'
 import './font-awesome.min.css'
 import { FaSearch } from "react-icons/fa";
+import { FaInfoCircle } from "react-icons/fa";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,7 +22,7 @@ function App() {
                                 <div className="panel-heading">
                                     <h3 className="panel-title text-center">
                                     <FaSearch />
-                                        Validação de Documento Digital teste
+                                        Validação de Documento Digital
                                     </h3>
                                 </div>
 
@@ -33,7 +34,7 @@ function App() {
                                         <div className="form-group">
                                             <label htmlFor="docRegistro">* Documento de Registro
                                                 <a title="CPF ou Documento Estrangeiro">
-                                                    <i className="fa fa-info-circle" aria-hidden="true"></i>
+                                                <FaInfoCircle className='aviso'/>
                                                 </a>
                                             </label>
 
