@@ -1,12 +1,20 @@
 import { useState } from 'react'
 import './App.css'
 import './smartadmin-production.min.css'
-import './font-awesome.min.css'
+
 import { FaSearch } from "react-icons/fa";
 import { FaInfoCircle } from "react-icons/fa";
 
 function App() {
-  const [count, setCount] = useState(0)
+  
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Função para alternar a visibilidade
+  const toggleVisibility = () => {
+    console.log(isVisible)
+    setIsVisible(!isVisible);
+    console.log(isVisible)
+  };
 
   return (
     <div className="row">
@@ -15,13 +23,13 @@ function App() {
                 <div className="widget-body">
 
                     <div className="col-sm-8 col-sm-offset-2 centralizar">
-                        <form action="#" method="post"  id="form-consultar-certificado-digital" >
+                        <div  id="form-consultar-certificado-digital" >
 
                             <div className="panel panel-primary">
 
                                 <div className="panel-heading">
                                     <h3 className="panel-title text-center">
-                                    <FaSearch />
+                                    <FaSearch className='espaco' />
                                         Validação de Documento Digital
                                     </h3>
                                 </div>
@@ -60,8 +68,8 @@ function App() {
                                 </div>
 
                                 <div className="item-center">
-                                    <button type="button" className="btn btn-primary" id="btn-consultar">
-                                    <FaSearch />
+                                    <button onClick={toggleVisibility} className="btn btn-primary">
+                                    <FaSearch className='espaco'/>
                                         Validar
                                     </button>
 
@@ -74,22 +82,22 @@ function App() {
                                 </br>
                                 <br>
                                 </br>
-
-                                <div className="panel panel-default esconder" id="painel-informacoes-documento">
+                                {isVisible && (
+                                    <div className="panel panel-default " id="painel-informacoes-documento">
                                     <div className="panel-body">
                                         <div className="row" id="row-informacoes-documento">
 
                                             <div className="col-sm-12 col-md-6">
                                                 <div className="form-group">
                                                     <label htmlFor="pesNome"><b>Titular do Documento:</b></label>
-                                                    <p className="form-control-static pesNome"></p>
+                                                    <p className="form-control-static pesNome">PRISCILA NERES DA SILVA</p>
                                                 </div>
                                             </div>
 
                                             <div className="col-sm-12 col-md-6">
                                                 <div className="form-group">
                                                     <label htmlFor="tdocDescricao"><b>Tipo:</b></label>
-                                                    <p className="form-control-static tdocDescricao"></p>
+                                                    <p className="form-control-static tdocDescricao">Certificado de Conclusão de Curso</p>
                                                 </div>
                                             </div>
 
@@ -97,14 +105,14 @@ function App() {
                                                 <div className="form-group">
                                                     <label htmlFor="docrequeridoDataRequerido"><b>Data de
                                                             Emissão:</b></label>
-                                                    <p className="form-control-static docrequeridoDataRequerido"></p>
+                                                    <p className="form-control-static docrequeridoDataRequerido">03/03/2022 09:50</p>
                                                 </div>
                                             </div>
 
                                             <div className="col-sm-12 col-md-6">
                                                 <div className="form-group">
                                                     <label htmlFor="cursoNome"><b>Curso:</b></label>
-                                                    <p className="form-control-static cursoNome"></p>
+                                                    <p className="form-control-static cursoNome">GESTÃO EM QUALIDADE EM SERVIÇOS DE SAÚDE E HOSPITALAR</p>
                                                 </div>
                                             </div>
 
@@ -113,11 +121,11 @@ function App() {
                                                     <label htmlFor="instituicaoResponsavel">
                                                         <b>Instituição Responsável:</b>
                                                     </label>
-                                                    <p className="form-control-static instituicaoResponsavel"></p>
+                                                    <p className="form-control-static instituicaoResponsavel">CENTRO UNIVERSITÁRIO FAVENI - UNIFAVENI</p>
                                                 </div>
                                             </div>
 
-                                            <div className="col-sm-12 col-md-6">
+                                            <div className="col-sm-12 col-md-6 esconder">
                                                 <div className="form-group" id="responsavelAssinatura">
                                                     <label htmlFor="assinaturaResponsavel"><b>Responsável Pela
                                                             Assinatura:</b></label>
@@ -125,10 +133,10 @@ function App() {
                                                 </div>
                                             </div>
 
-                                            <div className="col-sm-12 col-md-12">
+                                            <div className="col-sm-12 col-md-12 esconder">
                                                 <div className="form-group no-display" id="divAveriguacaoPendente" >
                                                     <p className="form-control-static">
-                                                        <i className="fa fa-exclamation-circle" aria-hidden="true"></i>
+                                                        <i className="fa fa-exclamation-circle " aria-hidden="true"></i>
                                                         Documento encontra-se com uma averiguação em análise cadastrada!
                                                     </p>
                                                 </div>
@@ -145,8 +153,11 @@ function App() {
                                         </div>
                                     </div>
                                 </div>
+        
+      )}
+                                
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
                     </div>
