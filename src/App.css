@@ -1,0 +1,80 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  
+}
+
+.marge {
+  margin-top: 10px;
+}
+
+.cinza {
+  background-color: #F0F0F0;
+}
+
+
+
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.clearfix, .inner-spacer:after, .jarviswidget, .jarviswidget-editbox, .jarviswidget > div {
+  zoom: 1
+}
+.jarviswidget {
+  margin: 0 0 30px;
+  position: relative;
+  -moz-border-radius: 0;
+  -khtml-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  padding: 0
+}
+
+.esconder {
+  display: none;
+}
+
+.jarviswidget .widget-body {
+  min-height: 100px;
+  position: relative;
+  padding-bottom: 13px
+}
+
+.centralizar {
+  min-height: 85vh;
+  display: grid;
+  align-items: center;
+}
+
+.item-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  z-index: 2;
+}
+
