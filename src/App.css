@@ -1,5 +1,4 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   
@@ -31,6 +30,94 @@
   margin-right: 2px;
 
 }
+
+
+#content {
+  padding: 10px 13px;
+  position: relative;
+}
+
+.alert {
+  margin-bottom: 2px;
+}
+
+.form-group.has-error {
+  position: relative;
+}
+
+.has-error .help-block {
+  margin: 0px;
+  display: none;
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0px;
+}
+
+.form-control.select2-container {
+  padding: 0px;
+  border: 0px;
+  height: auto;
+}
+
+.select2-container.select2-allowclear .select2-choice abbr:before {
+  color: #000;
+  font-size: 15px;
+  position: relative;
+  left: -5px;
+}
+
+.select2-hidden-accessible {
+  display: none;
+}
+
+.form-group.has-error .select2-choice,
+.form-group.has-error .select2-choices {
+  border-color: #b94a48;
+}
+
+.flash-messenger {
+  padding-left: 22px;
+  position: relative;
+}
+
+.flash-messenger .close {
+  position: absolute;
+  top: 30%;
+  right: 8px;
+}
+
+.flash-messenger .fa {
+  position: absolute;
+  left: 3px;
+  top: 35%;
+}
+
+.dataTables_processing {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  display: block;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+}
+
+.dataTables_processing i {
+  position: fixed;
+  top: 50%;
+}
+
+.dataTables_processing i::before {
+  font-size: 30px;
+}
+
+html, body {
+  background: transparent;
+}
+
 
 @keyframes logo-spin {
   from {
