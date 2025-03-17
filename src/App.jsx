@@ -19,7 +19,7 @@ function App() {
         setLoading(true);
         setTimeout(() => {
             setLoading(false);
-        }, 3000*60); 
+        }, 3000); 
         setTimeout(() => {
             setIsVisible(!isVisible);
         }, 4000);// Simula o carregamento por 3 segundos
