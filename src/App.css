@@ -133,6 +133,7 @@ html, body {
 
 .margemdez{
  margin: 10px;
+ display: block;
 }
 
 
@@ -174,6 +175,15 @@ html, body {
 
 .esconder {
   display: none;
+}
+
+.modalstyle{
+  display: block;
+  padding-right: 0px;
+}
+
+.modaldiv{
+  height: 703px;
 }
 
 .jarviswidget .widget-body {

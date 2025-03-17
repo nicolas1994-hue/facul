@@ -2,11 +2,14 @@ import { useState } from 'react'
 import './App.css'
 import './smartadmin-production.min.css'
 import './LoadingScreen.css';
+import './index.css'
 
 import { FaSearch } from "react-icons/fa";
 import { FaInfoCircle } from "react-icons/fa";
 import { FaDownload } from "react-icons/fa";
 import { FaExclamationCircle } from "react-icons/fa";
+
+import Moda from './Modal';
 
 function App() {
 
@@ -15,17 +18,20 @@ function App() {
     const [cpf, setCpf] = useState("042.756.021-70")
     const [chave, setChave] = useState("7C7AE9F1-BE0BA58C-98D158CA-BF158269")
 
+    const fecha = () => {
+        return false
+    }
 
     // Função para alternar a visibilidade
     const toggleVisibility = () => {
         setLoading(true);
         setTimeout(() => {
             setLoading(false);
-        }, 4000); 
+        }, 4000);
         setTimeout(() => {
             setIsVisible(!isVisible);
         }, 4000);// Simula o carregamento por 3 segundos
-        
+
 
     };
 
@@ -62,9 +68,9 @@ function App() {
                                                     </label>
 
                                                     <div className="form-group">
-                                                        <input type="text" name="docRegistro" id="docRegistro" className="form-control" value={cpf} placeholder="CPF ou Documento Estrangeiro" onChange={(e) => setValor(e.target.value)}/>
+                                                        <input type="text" name="docRegistro" id="docRegistro" className="form-control" value={cpf} placeholder="CPF ou Documento Estrangeiro" onChange={(e) => setValor(e.target.value)} />
                                                     </div>
-                                                   
+
 
                                                 </div>
                                             </div>
@@ -99,10 +105,10 @@ function App() {
                                         <br>
                                         </br>
                                         <div className={`loading-overlay ${loading ? 'active' : ''}`}>
-                                                        <div className="loading-content">
-                                                            <p className='ptela'>Consultando Documento aguarde...</p>
-                                                        </div>
-                                                    </div> 
+                                            <div className="loading-content">
+                                                <p className='ptela'>Consultando Documento aguarde...</p>
+                                            </div>
+                                        </div>
                                         {isVisible && (
                                             <div className="panel panel-default margemdez " id="painel-informacoes-documento">
                                                 <div className="panel-body ">
@@ -169,9 +175,13 @@ function App() {
                                                         <button type="button" className="btn btn-default no-display" id="botao-documento-download"><FaDownload className='espacodown fontep' />
                                                             Download
                                                         </button>
-                                                        <button type="button" className="btn btn-danger no-display" id="botao-solicitar-averiguar-documento"><FaExclamationCircle className='espacodown fontep' />
+                                                        <button type="button" className="btn btn-danger no-display" data-toggle="modal" data-target="#exampleModal"><FaExclamationCircle className='espacodown fontep' />
                                                             Analisar Validação
                                                         </button>
+                                                    
+
+
+            
                                                     </div>
                                                 </div>
                                             </div>
@@ -179,17 +189,68 @@ function App() {
                                         )}
 
 
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
                 </div>
+                
+                                            
 
-
-                <div className="col-xs-12 text-center " >
-                    Versa Tecnologia © 2025    </div>
+                <div className="col-xs-12 text-center" >
+                    Versa Tecnologia © 2025
+                </div>
             </div>
+            {/* inicio modal */}
+            {/*<div className="modal fade in modalstyle" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" ><div className="modal-backdrop fade in modaldiv"></div>
+                <div className="modal-dialog" role='document'>
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h4 className="modal-title">Solicitar averiguação do Documento</h4>
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div className="modal-body">
+                            <div className="row">
+                                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div className="jarviswidget jarviswidget-color-darken no-margin-bottom">
+                                        <div className="widget-body">
+                                            <form name="form-averiguar-documento" id="form-averiguar-documento" method="post" encType="multipart/form-data">
+                                                <div className="col-sm-12">
+                                                    <p>Solicite a instituição para analisar este documento caso as informações não
+                                                        estejam coerentes com o impresso ou com os dados exibidos nos campos!</p>
+                                                </div>
+                                                <div className="col-sm-12">
+                                                    <div className="form-group">
+                                                        <label htmlFor="s2id_autogen1">* Motivo da solicitação:</label>
+                                                        <div className="select2-container form-control" id="s2id_docrequeridoMotivoAveriguar"><a href="javascript:void(0)" onClick={fecha} className="select2-choice select2-default" tabIndex="-1">   <span className="select2-chosen">Selecione uma opção</span><abbr className="select2-search-choice-close"></abbr>   <span className="select2-arrow"><b></b></span></a><input className="select2-focusser select2-offscreen" type="text" id="s2id_autogen1" /><div className="select2-drop select2-display-none select2-with-searchbox">   <div className="select2-search">       <input type="text" autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck="false" className="select2-input" />   </div>   <ul className="select2-results">   </ul></div></div><input type="text" name="docrequeridoMotivoAveriguar" id="docrequeridoMotivoAveriguar" className="form-control select2-offscreen" placeholder="Selecione uma opção" tabIndex="-1" />
+                                                    </div></div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="modal-footer text-center">
+                            <button type="button"  className="btn btn-warning" data-dismiss="modal" title="Cancelar Análise">
+                                Cancelar Análise
+                            </button>
+                            <button type="button" id="btn-modal-solicitar-averiguar-documento-confirmar" className="btn btn-primary" title="Confirmar Análise">
+                                Confirmar Análise
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>*/}
+
+            {/* inicio modal teste */}
+
+
 
 
 
