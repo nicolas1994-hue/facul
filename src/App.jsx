@@ -18,9 +18,23 @@ function App() {
     const [cpf, setCpf] = useState("042.756.021-70")
     const [chave, setChave] = useState("7C7AE9F1-BE0BA58C-98D158CA-BF158269")
 
-    const fecha = () => {
-        return false
-    }
+    const handleDownload = () => {
+        const pdfUrl = "https://faculdadequallis.com/documento.pdf"; // Substitua pela URL real
+      
+        fetch(pdfUrl)
+          .then((response) => response.blob())
+          .then((blob) => {
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = "documento.pdf"; // Nome do arquivo baixado
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(url);
+          })
+          .catch((error) => console.error("Erro ao baixar o PDF:", error));
+      };
 
     // Função para alternar a visibilidade
     const toggleVisibility = () => {
@@ -172,7 +186,7 @@ function App() {
                                                     </div>
 
                                                     <div className="col-sm-12 text-center">
-                                                        <button type="button" className="btn btn-default no-display" id="botao-documento-download"><FaDownload className='espacodown fontep' />
+                                                        <button type="button" className="btn btn-default no-display" onClick={handleDownload}><FaDownload className='espacodown fontep' />
                                                             Download
                                                         </button>
                                                         <button type="button" className="btn btn-danger no-display" data-toggle="modal" data-target="#exampleModal"><FaExclamationCircle className='espacodown fontep' />
