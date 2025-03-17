@@ -12,6 +12,8 @@ function App() {
 
     const [isVisible, setIsVisible] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [cpf, setCpf] = useState("042.756.021-70")
+    const [chave, setChave] = useState("7C7AE9F1-BE0BA58C-98D158CA-BF158269")
 
 
     // Função para alternar a visibilidade
@@ -19,7 +21,7 @@ function App() {
         setLoading(true);
         setTimeout(() => {
             setLoading(false);
-        }, 3000); 
+        }, 4000); 
         setTimeout(() => {
             setIsVisible(!isVisible);
         }, 4000);// Simula o carregamento por 3 segundos
@@ -60,7 +62,7 @@ function App() {
                                                     </label>
 
                                                     <div className="form-group">
-                                                        <input type="text" name="docRegistro" id="docRegistro" className="form-control" placeholder="CPF ou Documento Estrangeiro" />
+                                                        <input type="text" name="docRegistro" id="docRegistro" className="form-control" value={cpf} placeholder="CPF ou Documento Estrangeiro" onChange={(e) => setValor(e.target.value)}/>
                                                     </div>
                                                    
 
@@ -74,7 +76,7 @@ function App() {
                                                     <label htmlFor="chave">* CHAVE:</label>
 
                                                     <div className="form-group">
-                                                        <input type="text" name="chave" id="chave" className="form-control" placeholder="chave" />
+                                                        <input type="text" name="chave" id="chave" value={chave} className="form-control" placeholder="chave" onChange={(e) => setValor(e.target.value)} />
                                                     </div>
 
                                                 </div>
