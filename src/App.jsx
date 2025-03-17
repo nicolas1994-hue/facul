@@ -4,6 +4,8 @@ import './smartadmin-production.min.css'
 
 import { FaSearch } from "react-icons/fa";
 import { FaInfoCircle } from "react-icons/fa";
+import { FaDownload } from "react-icons/fa";
+import { FaExclamationCircle } from "react-icons/fa";
 
 function App() {
   
@@ -17,6 +19,7 @@ function App() {
   };
 
   return (
+    <>
     <div className="row">
         <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div className="jarviswidget jarviswidget-color-darken">
@@ -73,7 +76,7 @@ function App() {
                                         Validar
                                     </button>
 
-                                    <button type="button" className="btn cinzaekmjn" id="btn-limpar">
+                                    <button type="button" className="btn cinza" id="btn-limpar">
                                         Limpar
                                     </button>
                                 </div>
@@ -83,8 +86,8 @@ function App() {
                                 <br>
                                 </br>
                                 {isVisible && (
-                                    <div className="panel panel-default " id="painel-informacoes-documento">
-                                    <div className="panel-body">
+                                    <div className="panel panel-default margemdez " id="painel-informacoes-documento">
+                                    <div className="panel-body ">
                                         <div className="row" id="row-informacoes-documento">
 
                                             <div className="col-sm-12 col-md-6">
@@ -145,16 +148,18 @@ function App() {
                                         </div>
 
                                         <div className="col-sm-12 text-center">
-                                            <button type="button" className="btn btn-default no-display" id="botao-documento-download"><i className="fa fa-download"></i>
+                                            <button type="button" className="btn btn-default no-display" id="botao-documento-download"><FaDownload className='espacodown fontep'/>
                                                 Download
                                             </button>
-                                            <button type="button" className="btn btn-danger no-display" id="botao-solicitar-averiguar-documento"><i className="fa fa-exclamation-circle"></i> Analisar Validação
+                                            <button type="button" className="btn btn-danger no-display" id="botao-solicitar-averiguar-documento"><FaExclamationCircle className='espacodown fontep' />
+                                            Analisar Validação
                                             </button>
                                         </div>
                                     </div>
                                 </div>
         
-      )}
+    )}
+      
                                 
                             </div>
                         </div>
@@ -162,7 +167,16 @@ function App() {
                 </div>
                     </div>
                 </div>
-     </div>
+
+                
+    <div className="col-xs-12 text-center " >
+        Versa Tecnologia © 2025    </div>
+</div>
+     
+     
+
+     
+    </>
   )
 }
 

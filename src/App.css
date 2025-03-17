@@ -28,9 +28,17 @@
 .espaco{
  
   margin-right: 2px;
+  margin-bottom: 2px;
 
 }
 
+.espacodown{
+  margin-right: 4px;
+  margin-bottom: 2px;
+}
+.fontep{
+  font-size: smaller;
+}
 
 #content {
   padding: 10px 13px;
@@ -113,9 +121,18 @@
 .dataTables_processing i::before {
   font-size: 30px;
 }
-
+body {
+  overflow: hidden;
+}
 html, body {
   background: transparent;
+  
+}
+
+
+
+.margemdez{
+ margin: 10px;
 }
 
 
