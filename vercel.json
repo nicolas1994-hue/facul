@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+      {
+        "source": "/documentos/documento-requerido/consultar-certificado-digital",
+        "destination": "/index.html"
+      }
+    ]
+  }
